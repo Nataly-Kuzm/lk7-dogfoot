@@ -2,8 +2,7 @@
 border: 1px solid#ffe44d;
 border-radius: 8px;
 padding: 8px;
-display: flex;
-flex-direction: column;
+display: grid;
 gap:10px;
 }
 .card_img{
@@ -23,6 +22,7 @@ border-radius:30px;
 padding:8px 12px;
 font-weight: 700;
 background-color: #ffe44d;
-
+height: max-content;
+align-self: flex-end;
 }
 
