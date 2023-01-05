@@ -1,23 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 import Card from "../components/Card";
-import data from "../assets/data.json";
-import Header from "../components/Header";
-import Footer from "../components/Footer"
 
-export default()=>{
-    const [goods, setGoods] = useState(data);
-    return <div className="wrapper">
-           <Header products={data} update={setGoods}/>
-        <div className="cards-container">
+
+export default({goods})=>{
+   
+    return  <div className="cards-container">
           
-          {goods.map((d, i) => <Card
+          {goods.length > 0 ? 
+          goods.map((d, i) => <Card
           key={i}
-          img={d.picture}
+          img={d.pictures}
           text={d.name}
           price={d.price}
-          />)}
+          />) : 
+          <p style={{gridColumnEnd: "span 4", textAlign: "center"}}>Для отображения данных необходимо войти в приложение</p>
+          }
         </div>
-        <Footer/>
-        </div>
+      
+        
     
 }
